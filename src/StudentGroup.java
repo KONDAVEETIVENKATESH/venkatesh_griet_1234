@@ -11,7 +11,7 @@ import java.util.Date;
  * DO NOT PUT any classes into packages
  *
  */
-public class StudentGroup implements StudentArrayOperation {
+public class StudentGroup implements StudentArrayOperation,extends Student {
 
 	private Student[] students;
 	
@@ -31,21 +31,53 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void setStudents(Student[] students) {
-		// Add your implementation here
-this.students=students;
-	}
+
+this.students=students;		// Add your implementation here
+try
+{
+
+if(students==null)
+ throw IllegalArgumentException;
+else
+students+=students;
+}
+catch(IllegalArgumentException ia)
+System.out.println("IllegalArgumentException occured");
+
+}	
 
 	@Override
 	public Student getStudent(int index) {
+
+    this.index=index;
 		// Add your implementation here
-		return null;
+try
+{
+
+if((index<0)||(index>=students.length)) 
+ throw IllegalArgumentException;
+else
+return index;
+}
+catch(IllegalArgumentException ia)
+System.out.println("IllegalArgumentException occured");
+		
 	}
 
 	@Override
 	public void setStudent(Student student, int index) {
 		// Add your implementation here
-	}
+		this.students=students;
+		this.index=index;
+		try
+		{
+			if((student==null)||(index<0)||(index>=students.length))
+				throw IllegalArgumentException;
+			else
+				Student[index]=student;
 
+	}
+	}
 	@Override
 	public void addFirst(Student student) {
 		// Add your implementation here
@@ -99,7 +131,7 @@ this.students=students;
 	@Override
 	public Student[] getByBirthDate(Date date) {
 		// Add your implementation here
-		return null;
+		return student;
 	}
 
 	@Override
