@@ -8,7 +8,7 @@ import java.util.Date;
  * or hashCode() method
  * 
  */
-public class Student implements Comparable {
+public class Student implements Comparable{
 
 	/**
 	 * student id
@@ -24,21 +24,23 @@ public class Student implements Comparable {
 	/**
 	 * student date of birth in "yyyy-MM-dd" format
 	 */
-	private Date birthDate;
+	private String birthDate;
 
 	/**
 	 * student average mark
 	 */
 	private double avgMark;
 
-	public Student(int id, String fullName, Date birthDate, double avgMark) {
-		this.id = id;
+	public Student() {
+	/*	this.id = id;
 		this.fullName = fullName;
 		this.birthDate = birthDate;
-		this.avgMark = avgMark;
+		this.avgMark = avgMark;*/
 	}
 
+
 	public int getId() {
+		
 		return id;
 	}
 
@@ -54,11 +56,11 @@ public class Student implements Comparable {
 		this.fullName = fullName;
 	}
 
-	public Date getBirthDate() {
+	public String getBirthDate() {
 		return birthDate;
 	}
 
-	public void setBirthDate(Date birthDate) {
+	public void setBirthDate(String birthDate) {
 		this.birthDate = birthDate;
 	}
 
